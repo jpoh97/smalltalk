@@ -158,18 +158,17 @@ Testing no es una técnica formal para verificar código. No te asegura nada de 
 El nombre de los tests deben representar reglas de negocio.
 
 Implementación rápida de un algoritmo que factoriza un número:
+	
+	calculate
+		| primeFactors numberToFactorize divisor |
+		primeFactors  := OrderedCollection new.
+		numberToFactorize := self
+		divisor := 2.
 
-calculate
-	| primeFactors numberToFactorize divisor |
-	
-	primeFactors  := OrderedCollection new.
-	numberToFactorize := self
-	divisor := 2.
-	
-	[ numberToFactorize > 1 ] whileTrue: [
-		[numberToFactorize isDivisibleBy: divisor] whileTrue: [
-				primeFactors add: divisor. 
-				numberToFactorize :=  numberToFactorize / divisor].
-			divisor := divisor + 1].
-	
-	^primeFactors
+		[ numberToFactorize > 1 ] whileTrue: [
+			[numberToFactorize isDivisibleBy: divisor] whileTrue: [
+					primeFactors add: divisor. 
+					numberToFactorize :=  numberToFactorize / divisor].
+				divisor := divisor + 1].
+
+		^primeFactors
