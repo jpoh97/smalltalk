@@ -94,3 +94,82 @@ aCustomer := Customer2 named: 'pepe' bornOn: March/27/2020.
 "Los closures se hicieron famosos porque Java no los tenia"
 
 "Vimos la diferencia entre instancia en clase. Jugamos con el browser, inspector y debuger. Podemos ir modificando un programa mientras esta funcionando"
+
+## Episodio 3
+
+Del Episodio 03: Aprendiendo Smalltalk con Hernan Wilkinson
+
+Lo importante de TDD es escribir tests que nos interesen a los programadores, sin importar si son unitarios, de integración, funcionales, etc
+
+Técnica de desarrollo basada en las características de aprendizaje (no es técnica de testing, se usan tests como herramienta)
+* Iterativa e incremental
+* Con feedback inmediato
+
+Como side-effect:
+* Recuerda todo lo aprendido
+* Y permite asegurarnos de no haber "desaprendido"
+
+Incluye análisis, diseño, programación y testing (no en este orden).
+
+¿Cómo se hace TDD?
+1. Escribir un test
+* Debe ser el mas sencillo que se nos ocurra
+* Debe fallar al correrlo
+2. Correr todos los tests
+* Implementar la solución más simple (no debe abarcar mas que el caso que estamos testeando) que haga pasar el/los test/s
+* GOTO 2 hasta que todos los tests pasen
+3. Reflexiono - ¿Se puede mejorar el código?
+* Si - Refactorizar. GOTO 2
+* No - GOTO 1
+Este paso es la parte artística de TDD, en donde hacemos que la aplicación se vea bien. No se puede agregar ni sacar funcionalidad, solo refactorizar (no cambia la ejecución del sistema)
+
+Se hacen tests de caja negra que permitan construir la funcionalidad. 
+
+Cada test debe agregar un valor funcional.
+
+Si me demoro mucho en cada paso puede significar que estoy abarcando un test muy grande, que no empecé por el mejor lugar, q el diseño del sistema no es bueno, etc.
+
+En ese ultimo caso significa que debo hacer mas refactors.
+
+REGLA 1: Si el test no falla la primera vez que corre es porque:
+a. Estamos testeando algo ya testeado
+b. Nos adelantamos en el paso 2
+
+La implementación no debe estar relacionada con datos de prueba sino con casos de prueba.
+
+Casos de prueba = Conjunto de datos de prueba.
+
+Cuando diseñamos un sistema con papel, nosotros estamos corriendo ese sistema en nuestra cabeza. Intentamos ser computadoras pero no lo somos.
+
+Debemos diseñar a alto nivel antes de empezar para particionar el problema funcionalmente. No debemos anticiparnos a crear todo el diseño, el diseño debe surgir ya que así funciona el ciclo de aprendizaje.
+
+Los getter y setter rompen el encapsulamiento.
+
+Lo que no se ejecuta no son mantenibles en el tiempo. UML es muy útil para transmitir conocimiento.
+
+REGLA 2: Sensar el tiempo que nos lleva realizar cada paso.
+
+Esto nos va a dar feedback.
+
+"Programar es el arte de nombrar cosas"
+
+Testing no es una técnica formal para verificar código. No te asegura nada de las cosas que no estas testeando.
+
+El nombre de los tests deben representar reglas de negocio.
+
+Implementación rápida de un algoritmo que factoriza un número:
+
+calculate
+	| primeFactors numberToFactorize divisor |
+	
+	primeFactors  := OrderedCollection new.
+	numberToFactorize := self
+	divisor := 2.
+	
+	[ numberToFactorize > 1 ] whileTrue: [
+		[numberToFactorize isDivisibleBy: divisor] whileTrue: [
+				primeFactors add: divisor. 
+				numberToFactorize :=  numberToFactorize / divisor].
+			divisor := divisor + 1].
+	
+	^primeFactors
