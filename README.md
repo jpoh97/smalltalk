@@ -172,3 +172,28 @@ Implementación rápida de un algoritmo que factoriza un número:
 				divisor := divisor + 1].
 
 		^primeFactors
+## Episodio 4
+
+Todas los tests de performance, escalabilidad, seguridad, etc. no son tests que nosotros escribimos con TDD. Son tests que se escriben cuando el sistema/código ya esta hecho, TDD es un proceso de desarrollo.
+
+Los closures son bloques de código que no tienen un nombre asociado (en ocaciones se denominan funciones anonimas). Un bloque es un objeto que representa un conjunto de colaboraciones al igual que un metodo, la diferencia es que no esta relacionado a una clase y no tiene un nombre.
+
+La función más importante de los closures es poder parametrizar código. Poder pasar como parametro en un mensaje un conjunto de colaboraciones de manera sencilla. En terminos de FP, los closures nos permiten tener funciones de alto orden (funciones que pueden recibir funciones como parametros).
+
+C: Bloque
+Lisp: Funciones lambdas
+Closure: Funciones lambdas + binding lexicográfico
+
+Los closures bindean al contexto de ejecución en el cual es instanciado.
+
+Una de las limitaciones de las funciones lambda en Java (que viene heredado de las clases anonimas) es que no pueden modificar objetos del contexto en el cual la función lambda es instanciada. Esto es debido a que esa variable ya no puede vivir en el Stack sino en el Heap. No son closures, son funciones lambda (no son las mismas func. lambda de Lisp). Son syntactic sugar de las clases anonimas.
+
+Un full closure es un closure que el return bindea al contexto de ejecución de donde ese closure esta siendo instanciado.
+
+El sindrome maradoniano es cuando alguien se referencia a si mismo en tercera persona en vez de primera persona (en la clase True de Smalltalk, returnar true en vez de self).
+
+En Smalltalk el mensaje if esta implementado con polimorfismo (en la clase True y False). Cuando se trabaja con objetos, uno intenta evitar el if y usar polimorfismo. Cuando utilizo polimorfismo las decisiones las termina tomando los objetos, cuando utilizo if las decisiones las toma el programador y las hardcodea en el código. Cuando necesito agregar condiciones, solo debo agregar objetos y no modificar la lógica de decisión, me da mayores opciones de ampliar mi diseño sin necesidad de modificar nada (no es un regla, no siempre aplica utilizar polimorfismo sobre if, hay limitantes).
+
+En lenguajes tipo, algunas sintaxis son construcciones especiales (while, if, try, for, etc), cuando trabajamos en lenguajes consistentes como Smalltalk empezamos a verlo como un conjunto de colaboraciones.
+
+Los lenguajes type recursive detectan y eliminan la cola de la recursión. No necesitan crear un nuevo contexto de ejecución para la implementación de un metodo recursivo (ej: Haskell).
