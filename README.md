@@ -197,3 +197,50 @@ En Smalltalk el mensaje if esta implementado con polimorfismo (en la clase True 
 En lenguajes tipo C, algunas sintaxis son construcciones especiales (while, if, try, for, etc), cuando trabajamos en lenguajes consistentes como Smalltalk empezamos a verlo como un conjunto de colaboraciones.
 
 Los lenguajes type recursive detectan y eliminan la cola de la recursión. No necesitan crear un nuevo contexto de ejecución para la implementación de un método recursivo (ej: Haskell).
+
+## Episodio 5
+
+Smalltalk te permite hacer todos, el limite es tu imaginación (incluso puedes debugear el debuger). No leemos archivos o usamos herramientas para las dependencias, solo trabajamos con objetos. Smalltalk fue creado por científicos que te dan todas las libertades, Java evita que te puedas equivocar y por ello te restringen tus libertades (no puedes modificar las clases que vienen con el JDK).
+
+El padre de todos los objetos es ProtoObject que tiene los mensajes mínimos que debe tener un objeto. Object hereda de ProtoObject.
+
+Cuando un objeto recibe un mensaje que no sabe responder, el retorna el mensaje el mensaje doesNotUnderstand. En lenguajes tipados el compilador no te permite enviar mensajes que el objeto no sabe responder.
+
+El patrón MVC fue creado en Smalltalk como un framework. Este resolvía el problema de la interacción hombre maquina con user interface, mouse y teclado. Cada modelo podía tener múltiples vistas. Este framework utiliza lo que hoy en día conocemos como el patrón observer.
+
+Los 23 patrones que vienen del libro de GOF fueron deducidos de soluciones que proponía Smalltalk, pero usaron para los ejemplos a C++. 
+
+Cuando Alan Kay pensó en Smalltalk no pensó en un lenguaje de programación, pensó en una computadora. Smalltalk es mucho mas que un lenguaje.
+
+De Number hereda Integer, Fraction y Float. Se podría trabajar sin float, solo con fraction pero es un poco mas lento. En Smalltalk estamos trabajando con números reales, no tenemos las limitaciones, overflow, problemas de precisión, etc que usualmente tenemos en Java y tampoco es necesario definir el tipo del numero ya que es un lenguaje dinámicamente tipado.
+
+La mayoría de lenguajes de programación tiene implementada solamente la parte aritmética de la matemática, no nos permiten trabajar algebraicamente. El problema es que los números no tienen semántica, son símbolos que representan una abstracción. ¿Qué significa 5? es diferente a decir ¿Qué significa 5 metros? Es la manera de darle semántica a un número.
+
+No debemos quedarnos nunca con lo que el lenguaje de programación nos da. Si el lenguaje no tiene una representación o abstracción que necesitamos, debemos crearla o implementarla. Debemos ir más allá.
+
+Gracias a la extensibilidad de Smalltalk (open close principle), podemos adicionar estas representaciones que el lenguaje no trae y necesitamos. 
+
+En Java no podemos tener nombres de mensajes que sean operadores, de hecho los operadores no son mensajes.
+
+Nil es un objeto global que puede representar infinidad de cosas (de allí viene el problema de tenerlo).
+
+Todas las colecciones vienen de la clase Collection. Puedes crear un array #(10 25 31) o {10 factorial. 3+5. 'hola'} o Array with: 10 factorial with: 3+5 with: 'hola'.
+
+Se usa el mensaje at: para acceder a las posiciones de un array. No existe esa sintaxis [], todo se resuelve por mensajes y objetos.
+
+El for seria asi:
+
+for (int i = 0; i < 10; i++) { ... }
+0 to 9 do: [ :aNumber | aNumber + 1 ]
+
+0 to 9 crea un intervalo que es una colección.
+
+El mensaje sum lanza un mensaje de error si la colección es vacía. Se puede usar un closure ifEmpty: para manejar el caso en que sea vacía la colección. Se puede hacer reject, collect, select, sum, etc.
+
+Existen Dictionary que permite representar clave y valor (no usarlo cuando se necesita un abstracción).
+
+Tenemos el Set que no permite crear elementos repetidos dentro del Array. Tenemos los Bag que si lo permite y cuenta cuantos elementos hay de cada uno.
+
+String subclasifica Collection. Es una colección de caracteres. Todos los mensajes que tiene una colección los puedo utilizar en un String.
+
+Gemstorm reduce la complejidad accidental que normalmente tenemos con otras bases de datos.
