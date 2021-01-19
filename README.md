@@ -230,8 +230,9 @@ Se usa el mensaje at: para acceder a las posiciones de un array. No existe esa s
 
 El for seria asi:
 
-for (int i = 0; i < 10; i++) { ... }
-0 to 9 do: [ :aNumber | aNumber + 1 ]
+Sintaxis C: for (int i = 0; i < 10; i++) { ... }
+
+En Smalltalk: 0 to 9 do: [ :aNumber | aNumber + 1 ]
 
 0 to 9 crea un intervalo que es una colección.
 
