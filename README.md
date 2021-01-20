@@ -285,9 +285,9 @@ Sistema Reflexivo: Meta-sistema "casually connected" consigo mismo
 
 Reflexión: Habilidad integral de una entidad para representar, operar sobre y tratar consigo mismo en la misma manera que representa, opera sobre y trata con su sujeto primario
 Introspection: La habilidad de un programa de razonar acerca de si mismo y/o la implementación del lenguaje de programación (read)
-Intercession: La habilidad de un programa de "actuar" sobre las reificaciones de si mismo y la implementación del lenguaje de programación (write)
+Intercession: La habilidad de un programa de "actuar" sobre las reificaciones (reificar: hacer un objeto de algo que no lo era) de si mismo y la implementación del lenguaje de programación (write)
 Reflexión estructural: La habilidad de un programa de acceder a su representación estructural y la implementación del lenguaje de programación
-Reflexión de Comportamiento (Behavioral Reflection): Habilidad de un ptrograma de acceder a la representación dinámica de si mismo, esto es a la ejecución operacional del programa y de la implementación del lenguaje de programación
+Reflexión de Comportamiento (Behavioral Reflection): Habilidad de un programa de acceder a la representación dinámica de si mismo, esto es a la ejecución operacional del programa y de la implementación del lenguaje de programación
 
 ![](snapshots/ep6-2.png)
 
@@ -295,3 +295,27 @@ Reflexión de Comportamiento (Behavioral Reflection): Habilidad de un ptrograma 
 | :---: | :---: | :---: |
 | Structure | All classes<br>Does implement?<br>Design rules? | addInstVarNamed:<br>compile: |
 | Behavior | Assertion Name<br>Debugger | Create Method<br>Pluggable Proxy<br>Debugger |
+
+```
+Object subclasses.
+Object allSubclasses size.
+Array superclass superclass.
+
+OrderedCollection  instVarNames.
+OrderedCollection definition.
+OrderedCollection selectors size.
+OrderedCollection compiledMethodAt: #removeAll.
+
+"Lineas de codigo de toda la imagen"
+Object withAllSubclasses sum: [ :aClass |
+	aClass selectors 
+		sum: [ :aSelector | 		(aClass compiledMethodAt: aSelector) linesOfCode ]
+		ifEmpty: [0]].
+
+Object withAllSubclasses sum: [ :aClass |
+	aClass selectors 
+		sum: [ :aSelector | 		(aClass compiledMethodAt: aSelector) numberOfCollaborations ]
+		ifEmpty: [0]]. 
+		
+Set allInstances.
+```
