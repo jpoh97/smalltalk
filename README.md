@@ -318,4 +318,16 @@ Object withAllSubclasses sum: [ :aClass |
 		ifEmpty: [0]]. 
 		
 Set allInstances.
+
+Object subclass: #ClaseXX
+	instanceVariableNames: '' 
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Webinar'.
+	
+ClaseXX addInstVarName: 'v1'.
+ClaseXX removeInstVarName: 'v1'.
+
+ClaseXX compile: 'm1 ^10'.
+ClaseXX removeSelector: #m1.
 ```
