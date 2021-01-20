@@ -280,3 +280,5 @@ Sistema computacional: Sistema que actúa y razona sobre un dominio
 Casual connection: Propiedad que asegura que cambios en el dominio se ven reflejados en el modelo y viceversa
 Mesa-sistema: Sistema cuyo dominio es otro sistema
 Sistema Reflexivo: Meta-sistema "casually connected" consigo mismo
+
+![](snapshots/ep6-1.png)
