@@ -288,3 +288,5 @@ Introspection: La habilidad de un programa de razonar acerca de si mismo y/o la 
 Intercession: La habilidad de un programa de "actuar" sobre las reificaciones de si mismo y la implementación del lenguaje de programación (write)
 Reflexión estructural: La habilidad de un programa de acceder a su representación estructural y la implementación del lenguaje de programación
 Reflexión de Comportamiento (Behavioral Reflection): Habilidad de un ptrograma de acceder a la representación dinámica de si mismo, esto es a la ejecución operacional del programa y de la implementación del lenguaje de programación
+
+![](snapshots/ep6-2.png)
