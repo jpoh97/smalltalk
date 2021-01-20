@@ -290,3 +290,8 @@ Reflexión estructural: La habilidad de un programa de acceder a su representaci
 Reflexión de Comportamiento (Behavioral Reflection): Habilidad de un ptrograma de acceder a la representación dinámica de si mismo, esto es a la ejecución operacional del programa y de la implementación del lenguaje de programación
 
 ![](snapshots/ep6-2.png)
+
+| | Read | Write |
+| :---: | :---: | :---: |
+| Structure | All classes<br>Does implement?<br>Design rules? | addInstVarNamed:<br>compile: |
+| Behavior | Assertion Name<br>Debugger | Create Method<br>Pluggable Proxy<br>Debugger |
