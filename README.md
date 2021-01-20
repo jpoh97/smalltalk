@@ -245,3 +245,38 @@ Tenemos el Set que no permite crear elementos repetidos dentro del Array. Tenemo
 String subclasifica Collection. Es una colección de caracteres. Todos los mensajes que tiene una colección los puedo utilizar en un String.
 
 Gemstorm reduce la complejidad accidental que normalmente tenemos con otras bases de datos.
+
+## Episodio 6
+
+Codigo repetido no es texto repetido, son patrones de colaboración repetido. Para sacar codigo repetido se copia a un lugar, parametrizo lo que cambia, contextualizo los nombres y lo empiezo a utilizar.
+
+Para parametrizar codigo, se necesita usar closures o lambdas en caso de Java.
+
+"Una linea en Smalltalk equivale a 5 o 6 lineas en C++"
+
+"[Smalltalk] became the exampler of the new computing, in part, because we were actually trying for a qualitative shift in belief structures--a new Kuhnian paradigm in the same spirit as the invention of the printing press--and thus took highly extreme positions that almost forced these new styles to be invented" - Alan Kay
+
+* Software -> Modelo
+* Construir software -> Modelar -> Aprender sobre lo que se modela -> Aprendizaje constructivista
+* "millions of potencial users meant that the user interface would have to become a lerning environment along the lines of Montessori and Brunet" -  Alan Kay
+* "and needs for large scope, reduction in complexity, and end-user literacy would require that data and control structures be done away within favor of a more biological scheme of protected universal cells interaction only through messages that could mimic any desired behavior" - Alan Kay
+* "El lenguaje no es nada, los objetos son todos"
+
+Ej:
+* Algebra de Boole - ifTrue:
+* Iteraciones - whileTrue:
+* Excepciones - on:do: -> redefinir handles:
+
+* "The biggest hit for me while at SAIL in late '69 was to really understand LISP. Of course, every student knew about car, cdr, and cons, but... no one had penetrated the mysteries of eval and apply. I could hardly believe how beautiful and wonderful the idea of LISP was [McCarthy 1960]" - Alan Kay
+* "... there were deep flaws in its logical foundations. By this, I mean that the pure language was supposed to be based on functions, but its most important components--such as lambda expressions, qoutes, and conds--were not functions at all, and instead were called special forms" - Alan Kay
+* "The actual beauty of LISP came more from the promise of its metastructures than its actual model. I spent a fair amount of time thinking about how objects could be characterized as universal computers without having to have any exceptions in the central metaphor. What seemed to be needed was complete control over what was passed in a message send; in particular, when and in what environment did expressions get evaluated?" - Alan Kay
+
+Meta-xxx: Que habla sobre, que define a, xxx
+Ejemplo:
+* Una clase es un Meta-objeto porque define su comportamiento
+* El español es un "meta-lenguaje" porque puede predicar sobre "si mismo". Ejemplo: "La palabra casa tiene 4 letras"
+
+Sistema computacional: Sistema que actúa y razona sobre un dominio
+Casual connection: Propiedad que asegura que cambios en el dominio se ven reflejados en el modelo y viceversa
+Mesa-sistema: Sistema cuyo dominio es otro sistema
+Sistema Reflexivo: Meta-sistema "casually connected" consigo mismo
