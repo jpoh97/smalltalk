@@ -248,11 +248,11 @@ Gemstorm reduce la complejidad accidental que normalmente tenemos con otras base
 
 ## Episodio 6
 
-Codigo repetido no es texto repetido, son patrones de colaboración repetido. Para sacar codigo repetido se copia a un lugar, parametrizo lo que cambia, contextualizo los nombres y lo empiezo a utilizar.
+Código repetido no es texto repetido, son patrones de colaboración repetido. Para sacar código repetido se copia a un lugar, parametrizo lo que cambia, contextualizo los nombres y lo empiezo a utilizar.
 
-Para parametrizar codigo, se necesita usar closures o lambdas en caso de Java.
+Para parametrizar código, se necesita usar closures o lambdas en caso de Java.
 
-"Una linea en Smalltalk equivale a 5 o 6 lineas en C++"
+"Una línea en Smalltalk equivale a 5 o 6 líneas en C++"
 
 "[Smalltalk] became the exampler of the new computing, in part, because we were actually trying for a qualitative shift in belief structures--a new Kuhnian paradigm in the same spirit as the invention of the printing press--and thus took highly extreme positions that almost forced these new styles to be invented" - Alan Kay
 
@@ -289,20 +289,22 @@ Intercession: La habilidad de un programa de "actuar" sobre las reificaciones (r
 Reflexión estructural: La habilidad de un programa de acceder a su representación estructural y la implementación del lenguaje de programación
 Reflexión de Comportamiento (Behavioral Reflection): Habilidad de un programa de acceder a la representación dinámica de si mismo, esto es a la ejecución operacional del programa y de la implementación del lenguaje de programación
 
-La metaprogramación a nivel comportamiento lectura se utiliza por ejemplo para implementar un debuger. Un debuger lee el stack de ejecución para cada contexto de ejecución.
-
-A nivel comportamiento escritura seria modificar el stack de ejecución mientras se esta ejecutando.
-
-No es bueno usar meta-programación para resolver problemas del dominio de negocio. La meta-programación es como magia, oculta muchas cosas y esto despues dificulta el mantenimiento. Hay que tener mucho cuidado de cuando usarla, es una herramienta muy poderosa pero hay que usarla con sabiduria en los contextos correctos. Un buen caso de uso es para crear herramientas para los mismos desarrolladores (debugers, lints, etc).
-
-Para saber si un diseño es bueno se mira que tan declarativo es. Que tan facil es mappear ese diseño al dominio del problema. Si tengo clases que representan conceptos del dominio del problema probablemente sea un buen diseño. No hay una respuesta unica, es algo contextual la pregunta.
-
 ![](snapshots/ep6-2.png)
+
 
 | | Read | Write |
 | :---: | :---: | :---: |
 | Structure | All classes<br>Does implement?<br>Design rules? | addInstVarNamed:<br>compile: |
 | Behavior | Assertion Name<br>Debugger | Create Method<br>Pluggable Proxy<br>Debugger |
+
+
+La metaprogramación a nivel comportamiento lectura se utiliza por ejemplo para implementar un debuger. Un debuger lee el stack de ejecución para cada contexto de ejecución.
+
+A nivel comportamiento escritura seria modificar el stack de ejecución mientras se esta ejecutando.
+
+No es bueno usar meta-programación para resolver problemas del dominio de negocio. La meta-programación es como magia, oculta muchas cosas y esto después dificulta el mantenimiento. Hay que tener mucho cuidado de cuando usarla, es una herramienta muy poderosa pero hay que usarla con sabiduría en los contextos correctos. Un buen caso de uso es para crear herramientas para los mismos desarrolladores (debugers, lints, etc).
+
+Para saber si un diseño es bueno se mira que tan declarativo es. Que tan fácil es mappear ese diseño al dominio del problema. Si tengo clases que representan conceptos del dominio del problema probablemente sea un buen diseño. No hay una respuesta única, es algo contextual la pregunta.
 
 ```
 Object subclasses.
