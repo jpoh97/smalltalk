@@ -289,6 +289,14 @@ Intercession: La habilidad de un programa de "actuar" sobre las reificaciones (r
 Reflexión estructural: La habilidad de un programa de acceder a su representación estructural y la implementación del lenguaje de programación
 Reflexión de Comportamiento (Behavioral Reflection): Habilidad de un programa de acceder a la representación dinámica de si mismo, esto es a la ejecución operacional del programa y de la implementación del lenguaje de programación
 
+La metaprogramación a nivel comportamiento lectura se utiliza por ejemplo para implementar un debuger. Un debuger lee el stack de ejecución para cada contexto de ejecución.
+
+A nivel comportamiento escritura seria modificar el stack de ejecución mientras se esta ejecutando.
+
+No es bueno usar meta-programación para resolver problemas del dominio de negocio. La meta-programación es como magia, oculta muchas cosas y esto despues dificulta el mantenimiento. Hay que tener mucho cuidado de cuando usarla, es una herramienta muy poderosa pero hay que usarla con sabiduria en los contextos correctos. Un buen caso de uso es para crear herramientas para los mismos desarrolladores (debugers, lints, etc).
+
+Para saber si un diseño es bueno se mira que tan declarativo es. Que tan facil es mappear ese diseño al dominio del problema. Si tengo clases que representan conceptos del dominio del problema probablemente sea un buen diseño. No hay una respuesta unica, es algo contextual la pregunta.
+
 ![](snapshots/ep6-2.png)
 
 | | Read | Write |
