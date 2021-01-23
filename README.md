@@ -350,4 +350,59 @@ En lenguajes metacirculares hay que tener cuidado de cometer errores circulares.
 
 Dentro de los lenguajes de objetos tenemos 2 tipos de implementaciones: los que son de clasificación (esos lenguajes donde hay clases como smalltalk, java, c#, etc) y los lenguajes de prototipación (lenguajes donde no hay clases como self y javascript, aunque javascript esta un poco alejado de la idea de original de prototipos).
 
-Las clases son las que definen el comportamiento de sus instancias. Las clases también son objetos (vienen de Class) y también reciben mensajes. La clase Class define el comportamiento de todas las clases. Esta subclasifica Object y es la que hace que toda clase se comporte como objeto. Class hace parte del metamodelo de Smalltalk. Class es una instancia de ella misma (circular) para evitar regresiones infinitas. La relación entre Object y Class se resuelve al momento del bootstrap, en donde se crean estas cosas y se cambian los punteros para que puedan depender entre ellos. Este es el metamodelo que tenia Smalltalk 76 y que tiene Java. La limitación de este metamodelo es que no puedo tener comportamiento especializado para las clases. Por eso en Java cuando se le quiere dar un comportamiento especializado a la clase (y que no aplique a las instancias) creamos esos metodos estaticos que ya no hacen parte del paradigma de objetos (seria estructurado o procedural).
+Las clases son las que definen el comportamiento de sus instancias. Las clases también son objetos (vienen de Class) y también reciben mensajes. La clase Class define el comportamiento de todas las clases. Esta subclasifica Object y es la que hace que toda clase se comporte como objeto. Class hace parte del metamodelo de Smalltalk. Class es una instancia de ella misma (circular) para evitar regresiones infinitas. La relación entre Object y Class se resuelve al momento del bootstrap, en donde se crean estas cosas y se cambian los punteros para que puedan depender entre ellos. Este es el metamodelo que tenia Smalltalk 76 y que tiene Java. La limitación de este metamodelo es que no puedo tener comportamiento especializado para las clases. Por eso en Java cuando se le quiere dar un comportamiento especializado a la clase (y que no aplique a las instancias) creamos esos metodos estaticos que ya no hacen parte del paradigma de objetos (seria estructurado o procedural, funciones tipo C).
+
+![](snapshots/ep7-1.png)
+
+En Java todas las clases son instancias de la clase Class (como el comportamiento que vemos en el metamodelo de la imagen anterior). Esto se puede comprobar al llamar el metodo getClass:
+
+```
+Class<? extends ExampleTest> thisClass = this.getClass();
+Class<? extends Example2> thisClass = this.getClass();
+// En ambos casos retorna objetos de tipo Class
+```
+
+El problema de los metodos estaticos de Java es que no estoy en el mundo de Objetos (no existe el this).
+
+Las clases son instancias de la clase Class. Son construcciones sintacticas, no tengo la posibilidad de facilmente acceder a ese objeto y definirle comportamiento.
+
+Smalltalk soluciono esto asignandole una clase a cada clase. Se llevo la misma idea de instancia - clase a clase - metaclase. Toda metaclase conoce su única instancia (clase). Esta caracteristica se denomina metaclase implicitas. La clase no puede existir hasta que no tiene una metaclase de la cual va a ser instancia. Las metaclases sigen la misma relación de subclasificación de las clases. ObjectClass subclasifica Class y este subclasifica Behavior. La metaclase de Class se llama ClassClass. Class es una clase abstracta, no tiene instancias, solamente subclases que son todas las clases. Todas las metaclases (ObjectClass, ClassClass, BehaviorClass, DateClass, etc) son objetos y son instancias de Metaclass. La metaclase de Metaclass es MetaclassClass y MetaclassClass es instancia de Metaclass (singularidad (no circularidad) para evitar una regresion al infinito, no podemos determinar quien es quien, uno es instancia del otro y el otro es instancia de si mismo). Behavior subclasifica Object (todo aquello que represente comportamiento se comporta como un objeto).
+
+Existen las metaclases explicitas (en python o en close (lenguaje de objetos de Lisp)) y significa que puedes a una clase definirle o modificarle su clase.
+
+Todos estos metamodelos salen naturalmente siguiendo el algoritmo de method lookup.
+
+Si queremos ampliar mi metamodelo (como lo hizo Pharo que es otra implementación de Smalltalk). Este tiene el concepto de Trait que son elementos de comportamiento puro que no tienen instancias. Es comparable con las interfaces de Java, pueden tener implementación para esos mensajes. Esto no es tan bueno. Lo que vos pones en una interfaz como implementación por default es como tener herencia multiple que es algo que se intento evitar en su momento en Java. Las interfaces en Java surgen como manera de representación de tipos puro (definición de tipos). En un lenguaje dinamicamente tipado no tiene sentido tener construcciones que representen tipos puros ya que en ningun momento se hace chequeo de tipos entonces el concepto de Trait hace referencia a grupos de comportamientos cohesivos (no se puede definir estados). El problema con la herencia multiple viene con el problema del diamante.
+
+Lo que hicieron en Pharo fue subclasificar Behavior con la clase Trait. Una manera de solucionar el problema del diamante de la herencia multiple se llama mixins que es la tecnica que usa ruby por medio de los modulos. 
+
+La ventaja de las metaclases explicitas es que se puede solucionar cosas como el patron singleton: tener una metaclase singleton y que todas las instancias de esta implementen el patron, con Smalltalk no se puede hacer esto y toca repetir código para implementar este patrón. La desventaja es todos los retos que puede tener las metaclases explicitas y perder compatibilidad.
+
+![](snapshots/ep7-2.png)
+
+```
+10 class "SmallInteger"
+10 class class "SmallInteger class"
+10 class class class "Metaclass"
+10 class class class class "Metaclass class"
+10 class class class class class "Metaclass"
+
+"Navegando a nivel clases"
+10 class superclass "Integer"
+10 class superclass superclass "Number"
+
+"Navegando a nivel metaclases"
+10 class class "SmallInteger class"
+10 class class superclass "Integer class"
+10 class class superclass superclass "Number class"
+10 class class superclass superclass superclass "Magnitude class"
+10 class class superclass superclass superclass superclass "Object class"
+10 class class superclass superclass superclass superclass superclass "ProtoObject class"
+10 class class superclass superclass superclass superclass superclass superclass "Class"
+10 class class superclass superclass superclass superclass superclass superclass superclass "ClassDescription"
+10 class class superclass superclass superclass superclass superclass superclass superclass superclass "Behavior"
+10 class class superclass superclass superclass superclass superclass superclass superclass superclass superclass "Object"
+"Toda clase es en definitiva un Objeto"
+```
+
+Se puede recorrer el metamodelo de esa manera.
