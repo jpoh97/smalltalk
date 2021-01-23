@@ -406,3 +406,11 @@ La ventaja de las metaclases explicitas es que se puede solucionar cosas como el
 ```
 
 Se puede recorrer el metamodelo de esa manera.
+
+Self halt. Crea un breakpoint en Smalltalk.
+
+La metaprogramación es para trabajar sobre programas, no sobre dominios de negocio particulares.
+
+El metamodelode Ruby es un poco más simple.
+
+Alan Kay comentaba que si a Platon le comentaramos como es el metamodelo de Smalltalk se revolcaría en su tumba. Esta implementación es muy compleja, se soluciono el problema de darle comportamiento especializado a las clases pero de manera muy compleja. Self es mucho mas simple.
