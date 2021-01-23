@@ -341,3 +341,13 @@ ClaseXX removeInstVarName: 'v1'.
 ClaseXX compile: 'm1 ^10'.
 ClaseXX removeSelector: #m1.
 ```
+
+## Episodio 7
+
+Smalltalk es un ambiente de objetos que incluye lenguaje de programación, herramientas de desarrollo, etc.
+
+En lenguajes metacirculares hay que tener cuidado de cometer errores circulares. Por ejemplo no deberia modificar el debugger, deberia subclasificarlo para hacer los cambios hasta asegurarme que este funcionado.
+
+Dentro de los lenguajes de objetos tenemos 2 tipos de implementaciones: los que son de clasificación (esos lenguajes donde hay clases como smalltalk, java, c#, etc) y los lenguajes de prototipación (lenguajes donde no hay clases como self y javascript, aunque javascript esta un poco alejado de la idea de original de prototipos).
+
+Las clases son las que definen el comportamiento de sus instancias. Las clases también son objetos (vienen de Class) y también reciben mensajes. La clase Class define el comportamiento de todas las clases. Esta subclasifica Object y es la que hace que toda clase se comporte como objeto. Class hace parte del metamodelo de Smalltalk. Class es una instancia de ella misma (circular) para evitar regresiones infinitas. La relación entre Object y Class se resuelve al momento del bootstrap, en donde se crean estas cosas y se cambian los punteros para que puedan depender entre ellos. Este es el metamodelo que tenia Smalltalk 76 y que tiene Java. La limitación de este metamodelo es que no puedo tener comportamiento especializado para las clases. Por eso en Java cuando se le quiere dar un comportamiento especializado a la clase (y que no aplique a las instancias) creamos esos metodos estaticos que ya no hacen parte del paradigma de objetos (seria estructurado o procedural).
