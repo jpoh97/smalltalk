@@ -414,3 +414,13 @@ La metaprogramación es para trabajar sobre programas, no sobre dominios de nego
 El metamodelode Ruby es un poco más simple.
 
 Alan Kay comentaba que si a Platon le comentáramos como es el metamodelo de Smalltalk se revolcaría en su tumba. Esta implementación es muy compleja, se soluciono el problema de darle comportamiento especializado a las clases pero de manera muy compleja. Self es mucho mas simple.
+
+## Episodio 8
+
+En Smalltalk puedo ir construyendo la interfaz dinámicamente, mientras el server se esta ejecutando. No se necesita bajar el servidor, compilar y volver a subirlo. Te permite desarrollar una aplicación web con la misma facilidad que si no fuera web. Todo el dinamismo se mantiene y el desarrollo se acelera mucho.
+
+Existen múltiples frameworks para hacer aplicaciones web: WebClient, Teapot (Pharo), SeaSide, etc.
+
+Las variables de clase son variables que se pueden acceder desde el lado de clase, el lado de instancia y para toda la jerarquía.
+
+Las arquitecturas en general (por ejemplo hexagonal) tratan de estereotipar los distintos tipos de objetos, es algo que pasa en este tipo de soluciones genéricas o usando DDD. Tenes 3 tipos de objetos: A, B y C y todo debes armarlo en base a esa estereotipación. Las decisiones de diseño se deben tomar de manera contextual en base al problema que esta resolviendo. Cuando decís que tenes estos 3 tipos de objetos estas haciendo un reduccionismo muy grande a esa solución/diseño. El problema es que cuando ese reduccionismo a esos 3 tipos de objetos no sirva, la gente no se va a dar cuenta y en vez de pensar en una solución distinta lo que se termina haciendo es tratando de encajar todo en esos 3 tipos de objetos (es como intentar encajar un cuadrado en un circulo). Te brindan una receta que generalmente no escala. Te venden que un diseño aplica para todas las soluciones (balas de plata).
