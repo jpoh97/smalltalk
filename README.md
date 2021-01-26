@@ -424,3 +424,9 @@ Existen múltiples frameworks para hacer aplicaciones web: WebClient, Teapot (Ph
 Las variables de clase son variables que se pueden acceder desde el lado de clase, el lado de instancia y para toda la jerarquía.
 
 Las arquitecturas en general (por ejemplo hexagonal) tratan de estereotipar los distintos tipos de objetos, es algo que pasa en este tipo de soluciones genéricas o usando DDD. Tenes 3 tipos de objetos: A, B y C y todo debes armarlo en base a esa estereotipación. Las decisiones de diseño se deben tomar de manera contextual en base al problema que esta resolviendo. Cuando decís que tenes estos 3 tipos de objetos estas haciendo un reduccionismo muy grande a esa solución/diseño. El problema es que cuando ese reduccionismo a esos 3 tipos de objetos no sirva, la gente no se va a dar cuenta y en vez de pensar en una solución distinta lo que se termina haciendo es tratando de encajar todo en esos 3 tipos de objetos (es como intentar encajar un cuadrado en un circulo). Te brindan una receta que generalmente no escala. Te venden que un diseño aplica para todas las soluciones (balas de plata).
+
+## Episodio 9
+
+Las excepciones checkeadas de Java obligan a romper el encapsulamiento. El que envia el mensaje tiene que saber cuales son las excepciones que se pueden levantar. Eso genera un acoplamniento porque si en algun momento cambio el tipo de excepcion, eso impacta en todo el arbol de ejecucion. No usar estas excepciones checkeadas.
+
+El hecho de poder definir closures en la condicion de handleo (handlear cualquier cosa) me evita tener que crear un monton de clases y una jerarquia de excepciones que no tienen comportamiento especifico.
