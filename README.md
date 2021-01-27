@@ -432,3 +432,27 @@ Las excepciones checkeadas de Java obligan a romper el encapsulamiento. El que e
 El hecho de poder definir closures en la condicion de handleo (handlear cualquier cosa) me evita tener que crear un monton de clases y una jerarquia de excepciones que no tienen comportamiento especifico.
 
 Con un lenguaje tan consistente como Smalltalk es "simple" implementar un mecanismo de excepciones que use try, catch (mensaje when que pueda recibir un closure para la condicion de handleo), resumeWith, retry.
+
+```
+"
+Sintaxis C
+try {
+ ...
+} catch (Exception e) {
+ handler exc.
+ 1) retornar
+2) pasar al proximo handler
+}
+"
+
+"
+Sintaxis Smalltalk (objeto mensaje)
+[...]
+	when: Exception
+	do: [ :anException | handler exc ].
+"
+
+[1/0]
+	on: Error" - ZeroDivide "
+	do: [ :a | 10 ] 10 
+```
