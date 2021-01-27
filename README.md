@@ -427,11 +427,11 @@ Las arquitecturas en general (por ejemplo hexagonal) tratan de estereotipar los 
 
 ## Episodio 9
 
-Las excepciones checkeadas de Java obligan a romper el encapsulamiento. El que envia el mensaje tiene que saber cuales son las excepciones que se pueden levantar. Eso genera un acoplamniento porque si en algun momento cambio el tipo de excepcion, eso impacta en todo el arbol de ejecucion. No usar estas excepciones checkeadas.
+Las excepciones checkeadas de Java obligan a romper el encapsulamiento. El que envía el mensaje tiene que saber cuales son las excepciones que se pueden levantar. Eso genera un acoplamiento porque si en algún momento cambio el tipo de excepción, eso impacta en todo el árbol de ejecución. No usar estas excepciones checkeadas.
 
-El hecho de poder definir closures en la condicion de handleo (handlear cualquier cosa) me evita tener que crear un monton de clases y una jerarquia de excepciones que no tienen comportamiento especifico.
+El hecho de poder definir closures en la condición de handleo (handlear cualquier cosa) me evita tener que crear un montón de clases y una jerarquía de excepciones que no tienen comportamiento especifico.
 
-Con un lenguaje tan consistente como Smalltalk es "simple" implementar un mecanismo de excepciones que use try, catch (mensaje when que pueda recibir un closure para la condicion de handleo), resumeWith, retry.
+Con un lenguaje tan consistente como Smalltalk es "simple" implementar un mecanismo de excepciones que use try, catch (mensaje when que pueda recibir un closure para la condición de handleo), resumeWith, retry.
 
 ```
 "
