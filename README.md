@@ -486,3 +486,9 @@ GemStone almacena la historia de una clase, por lo cual puedes tener varias inst
 Cuando se produce un error GemStone guarda el stack de ejecución (es otro objeto), no necesitas guardar logs o librerías (log4j) para hacer esto. El stack de ejecución no es solo texto plano, GemStone guarda una foto del estado actual de los objetos que puedes debuggear. Loggear demuestra la incapacidad que tenemos como desarrolladores. Loggear es una solución a un problema que no debería existir.
 
 El movimiento NoSQL no aporto casi, seguían los mismos problemas, problemas que GemStone si soluciona.
+
+## Episodio 11
+
+La maquina virtual de Smalltalk esta en Smalltalk. Se puede utilizar OpenSmalltalk que es open source.
+
+![](snapshots/ep11-1.png)
