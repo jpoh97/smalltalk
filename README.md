@@ -489,6 +489,12 @@ El movimiento NoSQL no aporto casi, seguían los mismos problemas, problemas que
 
 ## Episodio 11
 
-La maquina virtual de Smalltalk esta en Smalltalk. Se puede utilizar OpenSmalltalk que es open source.
+La maquina virtual de Smalltalk esta en Smalltalk. Se puede utilizar OpenSmalltalk que es open source. Hay algunas cosas que se implementan a nivel de C para esta maquina virtual.
 
 ![](snapshots/ep11-1.png)
+
+El metodo de lookup tiene una cache bastante pequeña a nivel de bytes pero que tiene un hit del 90%. Esta cache fue mejorada en la implementación de Self.
+
+En los lenguajes dinamicamente tipados, se puede anotar las variables para conocer el tipo de manera estatica (type annotation), no se hace checqueo de tipos, es solo para conocer la información del objeto (asi funciona typescript). 
+
+Tambien existen mecanismos para obtener el tipo de todas las variables de la maquina virtual (live typing). La ventaja es que estos tipos los agrega y mantiene la misma VM y no quedan en el código, sino que se obtiene cuando se necesite. No es inferencia de tipos, es recolección de tipos.
