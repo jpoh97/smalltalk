@@ -468,3 +468,7 @@ Luego las bases de datos empezaron a tener datos + codigos (SP).
 Si quieres persistir una bicicleta debes persisitir las ruedas en una tabla, el maniubro en otra, etc. y luego al consultar debes reeconstruir la bicicleta completa. Mientras en una base de datos de objetos traes la bicicleta completa.
 
 ![](snapshots/ep10-2.png)
+
+El Stone es lo que permite acceder al objeto y guardar los transaction logs. Los Gem son las virtual machine en donde se ejecuta GemStone.
+
+![](snapshots/ep10-3.png)
