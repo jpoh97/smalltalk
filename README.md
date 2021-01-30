@@ -471,7 +471,7 @@ Si quieres persistir una bicicleta debes persisitir las ruedas en una tabla, el 
 
 El Stone es lo que permite acceder al objeto y guardar los transaction logs. Los Gem son las virtual machine en donde se ejecuta GemStone.
 
-![](snapshots/ep10-4.png)
+![](snapshots/ep10-5.png)
 
 GemStone brinda bloqueo optimista lo cual evita deadlocks y problemas de concurrencia.
 
