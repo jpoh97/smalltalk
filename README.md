@@ -463,9 +463,9 @@ Sintaxis Smalltalk (objeto mensaje)
 
 El problema con las bases de datos relacionales es que hablan un lenguaje diferente al de la aplicación, por lo tanto necesito algo (ORM) que me permita traducir del paradigma de objetos al relacional.
 
-Luego las bases de datos empezaron a tener datos + codigos (SP).
+Luego las bases de datos empezaron a tener datos + códigos (SP).
 
-Si quieres persistir una bicicleta debes persisitir las ruedas en una tabla, el maniubro en otra, etc. y luego al consultar debes reeconstruir la bicicleta completa. Mientras en una base de datos de objetos traes la bicicleta completa.
+Si quieres persistir una bicicleta debes persistir las ruedas en una tabla, el manubrio en otra, etc. y luego al consultar debes reconstruir la bicicleta completa. Mientras en una base de datos de objetos traes la bicicleta completa.
 
 ![](snapshots/ep10-2.png)
 
@@ -479,10 +479,10 @@ GemStone brinda bloqueo optimista lo cual evita deadlocks y problemas de concurr
 
 JP Morgan tiene una aplicacion que se llama Capitall y usa GemStone, tiene 3 stones al rededor del mundo.
 
-GemStone es un Smalltalk distribuido. Ventajas: No tengo que preocuparme por el mapeo (ORMs), persistencia (es automatica), bloqueo.
+GemStone es un Smalltalk distribuido. Ventajas: No tengo que preocuparme por el mapeo (ORMs), persistencia (es automática), bloqueo.
 
-GemStone almacena la historia de una clase, por lo cual puedes tener varias instancias con diferentes versiones. Puedo implementar el mensaje DoesNotUnderstand para cuando se llame al mensaje que cambio o es nuevo en una version del objeto, y que este revise si existe una nueva version, se migre y luego se vuelve a mandar el mensaje a si mismo.
+GemStone almacena la historia de una clase, por lo cual puedes tener varias instancias con diferentes versiones. Puedo implementar el mensaje DoesNotUnderstand para cuando se llame al mensaje que cambio o es nuevo en una versión del objeto, y que este revise si existe una nueva versión, se migre y luego se vuelve a mandar el mensaje a si mismo.
 
-Cuando se produce un error GemStone guarda el stack de ejecución (es otro objeto), no necesitas guardar logs o librerias (log4j) para hacer esto. El stack de ejecución no es solo texto plano, GemStone guarda una foto del estado actual de los objetos que puedes debuggear. Loggear demuestra la incapacidad que tenemos como desarrolladores. Loggear es una solución a un problema que no deberia existir.
+Cuando se produce un error GemStone guarda el stack de ejecución (es otro objeto), no necesitas guardar logs o librerías (log4j) para hacer esto. El stack de ejecución no es solo texto plano, GemStone guarda una foto del estado actual de los objetos que puedes debuggear. Loggear demuestra la incapacidad que tenemos como desarrolladores. Loggear es una solución a un problema que no debería existir.
 
-El movimiento NoSQL no aporto casi, seguian los mismos problemas, problemas que GemStone si soluciona.
+El movimiento NoSQL no aporto casi, seguían los mismos problemas, problemas que GemStone si soluciona.
