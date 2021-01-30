@@ -493,8 +493,8 @@ La maquina virtual de Smalltalk esta en Smalltalk. Se puede utilizar OpenSmallta
 
 ![](snapshots/ep11-1.png)
 
-El metodo de lookup tiene una cache bastante pequeña a nivel de bytes pero que tiene un hit del 90%. Esta cache fue mejorada en la implementación de Self.
+El método de lookup tiene una cache bastante pequeña a nivel de bytes pero que tiene un hit del 90%. Esta cache fue mejorada en la implementación de Self.
 
-En los lenguajes dinamicamente tipados, se puede anotar las variables para conocer el tipo de manera estatica (type annotation), no se hace checqueo de tipos, es solo para conocer la información del objeto (asi funciona typescript). 
+En los lenguajes dinámicamente tipados, se puede anotar las variables para conocer el tipo de manera estática (type annotation), no se hace chequeo de tipos, es solo para conocer la información del objeto (así funciona typescript). 
 
-Tambien existen mecanismos para obtener el tipo de todas las variables de la maquina virtual (live typing). La ventaja es que estos tipos los agrega y mantiene la misma VM y no quedan en el código, sino que se obtiene cuando se necesite. No es inferencia de tipos, es recolección de tipos.
+También existen mecanismos para obtener el tipo de todas las variables de la maquina virtual (live typing). La ventaja es que estos tipos los agrega y mantiene la misma VM y no quedan en el código, sino que se obtiene cuando se necesite. No es inferencia de tipos, es recolección de tipos.
