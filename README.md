@@ -476,3 +476,7 @@ El Stone es lo que permite acceder al objeto y guardar los transaction logs. Los
 GemStone brinda bloqueo optimista lo cual evita deadlocks y problemas de concurrencia.
 
 ![](snapshots/ep10-4.png)
+
+JP Morgan tiene una aplicacion que se llama Capitall y usa GemStone, tiene 3 stones al rededor del mundo.
+
+GemStone es un Smalltalk distribuido. Ventajas: No tengo que preocuparme por el mapeo (ORMs), persistencia (es automatica), bloqueo.
