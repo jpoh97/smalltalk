@@ -460,3 +460,11 @@ Sintaxis Smalltalk (objeto mensaje)
 ## Episodio 10
 
 ![](snapshots/ep10-1.png)
+
+El problema con las bases de datos relacionales es que hablan un lenguaje diferente al de la aplicación, por lo tanto necesito algo (ORM) que me permita traducir del paradigma de objetos al relacional.
+
+Luego las bases de datos empezaron a tener datos + codigos (SP).
+
+Si quieres persistir una bicicleta debes persisitir las ruedas en una tabla, el maniubro en otra, etc. y luego al consultar debes reeconstruir la bicicleta completa. Mientras en una base de datos de objetos traes la bicicleta completa.
+
+![](snapshots/ep10-2.png)
