@@ -456,3 +456,7 @@ Sintaxis Smalltalk (objeto mensaje)
 	on: Error" - ZeroDivide "
 	do: [ :a | 10 ] 10 
 ```
+
+## Episodio 10
+
+![](snapshots/ep10-1.png)
