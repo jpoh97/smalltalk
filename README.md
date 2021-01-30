@@ -480,3 +480,9 @@ GemStone brinda bloqueo optimista lo cual evita deadlocks y problemas de concurr
 JP Morgan tiene una aplicacion que se llama Capitall y usa GemStone, tiene 3 stones al rededor del mundo.
 
 GemStone es un Smalltalk distribuido. Ventajas: No tengo que preocuparme por el mapeo (ORMs), persistencia (es automatica), bloqueo.
+
+GemStone almacena la historia de una clase, por lo cual puedes tener varias instancias con diferentes versiones. Puedo implementar el mensaje DoesNotUnderstand para cuando se llame al mensaje que cambio o es nuevo en una version del objeto, y que este revise si existe una nueva version, se migre y luego se vuelve a mandar el mensaje a si mismo.
+
+Cuando se produce un error GemStone guarda el stack de ejecución (es otro objeto), no necesitas guardar logs o librerias (log4j) para hacer esto. El stack de ejecución no es solo texto plano, GemStone guarda una foto del estado actual de los objetos que puedes debuggear. Loggear demuestra la incapacidad que tenemos como desarrolladores. Loggear es una solución a un problema que no deberia existir.
+
+El movimiento NoSQL no aporto casi, seguian los mismos problemas, problemas que GemStone si soluciona.
