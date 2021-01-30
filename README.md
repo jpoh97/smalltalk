@@ -472,3 +472,11 @@ Si quieres persistir una bicicleta debes persisitir las ruedas en una tabla, el 
 El Stone es lo que permite acceder al objeto y guardar los transaction logs. Los Gem son las virtual machine en donde se ejecuta GemStone.
 
 ![](snapshots/ep10-3.png)
+
+GemStone brinda bloqueo optimista lo cual evita deadlocks y problemas de concurrencia.
+
+![](snapshots/ep10-4.png)
+
+JP Morgan tiene una aplicacion que se llama Capitall y usa GemStone, tiene 3 stones al rededor del mundo.
+
+GemStone es un Smalltalk distribuido. Ventajas: No tengo que preocuparme por el mapeo (ORMs), persistencia (es automatica), bloqueo.
